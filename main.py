@@ -50,7 +50,7 @@ def webhook():
 
         # Only handle text messages for now
         if msg_type != "text":
-            send_whatsapp_message(sender, "Abhi sirf text messages support hote hain!")
+            send_whatsapp_message(sender, "⚠️ Sorry, I currently only support text messages!")
             return "ok", 200
 
         incoming_msg = message["text"]["body"].strip()

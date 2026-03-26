@@ -7,7 +7,6 @@ client = Groq(api_key=os.getenv("GROQ_API_KEY"))
 # In-memory chat history — key: sender phone number, value: list of messages
 chat_sessions: dict = {}
 
-
 def get_reply(sender: str, user_message: str) -> str:
     if sender not in chat_sessions:
         chat_sessions[sender] = [
@@ -16,14 +15,22 @@ def get_reply(sender: str, user_message: str) -> str:
 
     chat_sessions[sender].append({"role": "user", "content": user_message})
 
+    # Keep history limited to last 20 messages to avoid token overflow
+    if len(chat_sessions[sender]) > 51:  # 1 system + 50 messages
+        chat_sessions[sender] = [chat_sessions[sender][0]] + chat_sessions[sender][-50:]
+
     try:
         response = client.chat.completions.create(
             model="llama-3.3-70b-versatile",
-            messages=chat_sessions[sender]
+            messages=chat_sessions[sender],
+            temperature=0.7,
+            max_tokens=1024,
+            top_p=0.9
         )
-        reply = response.choices[0].message.content
+        reply = response.choices[0].message.content.strip()
         chat_sessions[sender].append({"role": "assistant", "content": reply})
         return reply
+
     except Exception as e:
         print(f"Groq error for {sender}: {e}")
-        return "Kuch gadbad ho gayi, thodi der baad try karo."
+        return "⚠️ Something went wrong on my end. Please try again in a moment!"
