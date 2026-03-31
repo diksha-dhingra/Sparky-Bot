@@ -5,7 +5,7 @@ from personality import SYSTEM_PROMPT
 genai.configure(api_key=os.getenv("GEMINI_API_KEY"))
 
 model = genai.GenerativeModel(
-    model_name="gemini-2.0-flash",
+    model_name="gemini-1.5-flash"
     system_instruction=SYSTEM_PROMPT
 )
 
