@@ -40,3 +40,13 @@ HELP_MESSAGE = f"""
 
 Just chat normally for AI replies!
 """
+
+ABOUT_MESSAGE = f"""
+✨ *{BOT_NAME} — AI WhatsApp Assistant*
+
+🧠 Powered by: Groq (LLaMA 3.3 70B)
+👩‍💻 Created by: *{CREATOR_NAME}*
+😏 Personality: Sarcastic but helpful
+
+Got a problem? I probably have an answer. And a joke. 💀
+"""
