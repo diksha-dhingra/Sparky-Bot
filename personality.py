@@ -25,23 +25,18 @@ Ask me anything. I'll answer. Probably with sarcasm. But I'll answer. 😏
 Type */help* to see what I can do!"""
 
 HELP_MESSAGE = f"""
-🤖 *{BOT_NAME} — Command List*
+🤖 *{BOT_NAME} — Commands*
 
-/start       - Show welcome message
-/help        - Show this menu
-/reset       - Clear conversation
-/about       - Know more about me
-/song [name] - Get YouTube & Spotify link 🎵
+/joke              - Random joke 😄
+/weather [city]    - Weather update 🌤
+/add [task]        - Add to-do task
+/mytasks           - View your tasks
+/done [number]     - Mark task done ✅
+/remind [time] [msg] - Set reminder ⏰
+/timer [time]      - Set a timer ⏰
+/song [name]       - Get song links 🎵
+/reset             - Clear chat
+/about             - About me
 
-Or just chat — I don't bite. Much. 😄
-"""
-
-ABOUT_MESSAGE = f"""
-✨ *{BOT_NAME} — AI WhatsApp Assistant*
-
-🧠 Powered by: Groq (LLaMA 3.3 70B)
-👩‍💻 Created by: *{CREATOR_NAME}*
-😏 Personality: Sarcastic but helpful
-
-Got a problem? I probably have an answer. And a joke. 💀
+Just chat normally for AI replies!
 """
