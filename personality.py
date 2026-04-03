@@ -28,27 +28,27 @@ HELP_MESSAGE = f"""
 *{BOT_NAME} Commands* 🤖
 
 *🎯 General*
-/start -> welcome message
-/about -> about me
-/reset -> clear chat
+*/start* -> welcome message.
+*/about* -> about me.
+*/reset* -> clear chat.
 
 *🌤 Info*
-/weather (place) -> get weather updates of any place.
+*/weather (place)* -> get weather updates of any place.
 
 *📋 Tasks*
-/add (task) -> add task
-/mytasks -> view tasks
-/done (task number) -> complete task
+*/add (task)* -> add task.
+*/mytasks* -> view tasks.
+*/done (task number)* -> mark completed task.
 
 *⏰ Timers*
-/remind (time with reason)
-/timer (time)
+*/remind (time with reason)* -> set reminder.
+*/timer (time)* -> add a quick timer.
 
 *🎵 Music*
-/song (song name)
+*/song (song name)* -> to get youtube and spotify links of any song.
 
 *😄 Fun*
-/joke -> random joke
+*/joke* -> random joke
 
 _Or just chat normally!_
 """
